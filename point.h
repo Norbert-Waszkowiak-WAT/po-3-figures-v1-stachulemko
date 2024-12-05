@@ -9,6 +9,7 @@ class Point{
     double x;
     double y;
     public:
+    Point();
     Point(double x,double y);
     Point( const Point & other);
     bool equals(const Point &other);

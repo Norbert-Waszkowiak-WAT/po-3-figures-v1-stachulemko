@@ -1,8 +1,9 @@
 #include "line.h"
+
 Line::Line(Point a ,Point b): a(a), b(b){}
-Line::Line(Line &other): a(other.a),b(other.b){}
-bool Line::equals(Point &other){
-    if(a.equals(other) and b.equals(other)){
+Line::Line(const Line &other): a(other.a),b(other.b){}
+bool Line::equals(const Line &other){
+    if(a.equals(other.a) and b.equals(other.b)){
         return true;
     } 
     else {
@@ -14,5 +15,9 @@ void Line::flip(){
     b.flip();
 }
 void Line::move(double x ,double y){
-    a.move();
+    a.move(x,y);
+    b.move(x,y);
+}
+string Line::toString(){
+    return "Line(" + a.toString() + ", " + b.toString() +")";
 }

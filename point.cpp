@@ -37,6 +37,7 @@ string Point::toString(){
     oss<<"Point("<<x<<", "<<y<<")";
     return oss.str();
 }
+Point::Point(){};
 
 
 
